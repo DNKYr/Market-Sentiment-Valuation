@@ -15,8 +15,4 @@ for stock in data['Symbol']:
 final_dataframe = pd.DataFrame(L)
 
 #formatting excel output
-with pd.ExcelWriter('MarketData.xlsx') as writer:
-    final_dataframe.to_excel(writer, sheet_name = 'Data', index = False)
-
-    # Access the worksheet 'recommended trade'
-    worksheet = writer.sheets['Data']
+final_dataframe.to_csv('MarketData.csv', index=False)
